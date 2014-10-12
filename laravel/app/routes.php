@@ -10,8 +10,16 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+# Homepage
+Route::get('/', function() {
+    return View::make('index');
+});
 
-Route::get('/', function()
-{
-	return View::make('hello');
+// Lorem Ipsum Generator Page
+Route::get('/LoremIpsum', function() {
+    return View::make('LoremIpsum');
+});
+// RandomUser Generator Page
+Route::get('/RandomUser', function() {
+    return View::make('RandomUser');
 });
