@@ -15,11 +15,24 @@ Route::get('/', function() {
     return View::make('index');
 });
 
-// Lorem Ipsum Generator Page
+// Lorem Ipsum Generator Page GET
 Route::get('/LoremIpsum', function() {
     return View::make('LoremIpsum');
 });
-// RandomUser Generator Page
+// Lorem Ipsum Generator POST
+Route::post('/LoremIpsum', function() {
+    $num_paragraphs=Input::get('num_paragraphs');
+    return View::make('LoremIpsum')
+        ->with('num_paragraphs', $num_paragraphs);
+});
+
+// RandomUser Generator Page GET
 Route::get('/RandomUser', function() {
     return View::make('RandomUser');
+});
+// RandomUser Generator Page POST
+Route::post('/RandomUser', function() {
+    $num_users=Input::get('num_users');
+    return View::make('RandomUser')
+        ->with('num_users', $num_users);
 });
