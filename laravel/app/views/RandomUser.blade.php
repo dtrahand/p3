@@ -20,6 +20,8 @@ name, date of birth, email, address, phone number and a description.<br />
 @if (isset($num_users))
     {{ $outputsentence }}
 
+    <!-- If the users have been generated (i.e. no error in number of users requested): -->
+    @if(isset($faker))
         <!-- Display the list of users: -->
         @for ($i=0; $i<$num_users; $i++)
             <section>
