@@ -17,18 +17,15 @@
     {{ Form::close() }}
 <hr>
 
-<?php
-if(isset($num_paragraphs)){
-    if($num_paragraphs > 100) {
-        echo "The maximum number of paragraphs is 100, please type in a number <=100.";
-                              }
-    else
-    {    //Using the Lorem Ipsum package:
-    $generator = new LoremIpsumGenerator();
-    $paragraphs = $generator->getParagraphs($num_paragraphs);
-    echo "Following are " . $num_paragraphs . "Lorem Ipsum paragraphs: <br/><br/>";
-    echo implode('<p>', $paragraphs);
-    }
-}
-?>
+<!-- If the number of paragraphs is set: -->
+@if(isset($num_paragraphs))
+    {{ $outputsentence }}
+
+    <!-- If the paragraphs have been generated (i.e. no error in number of paragraphs requested): -->
+    @if(isset($paragraphs))
+        <!-- Display the Lorem Ipsum package:-->
+        {{ implode('<p>', $paragraphs) }}
+    @endif
+@endif
+
 @stop

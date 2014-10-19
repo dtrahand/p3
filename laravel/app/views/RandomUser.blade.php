@@ -6,30 +6,33 @@
 
 @section('content')
 	<h1>Random User Generator</h1>
-This Generator will create a list of fake users, giving their name, date of birth, emai, address, phone number and a description.<br />
+This Generator will create a list of fake users with:<br />
+name, date of birth, email, address, phone number and a description.<br />
 <br />Choose the number of users you wish to create:<br />
     {{ Form::open(array('url' => 'RandomUser')) }}
-    {{ Form::label('num_users', 'Number of users', array('id'=>'num_users')) }}
+    {{ Form::label('num_users', 'Number of users (max 100) ', array('id'=>'num_users')) }}
     {{ Form::text('num_users') }}
     {{ Form::submit('Generate!') }} 
     {{ Form::close() }}
 <hr>
 
-<?php
-//if(isset($_POST['num_users'])){
-if(isset($num_users)){
-    //Calling the Faker package:
-    $faker = Faker::create();
-    echo "Following are " . $num_users . " users: <br/><br/>";
+<!-- If the number of users is set: -->
+@if (isset($num_users))
+    {{ $outputsentence }}
 
-    for ($i=0; $i < $num_users; $i++) {
-        echo "<br />" . $faker->name, "<br />";
-        echo $faker->dateTimeThisCentury->format('Y-m-d'), "<br />";
-        echo $faker->email, "<br />";
-        echo $faker->address . "<br />";
-        echo $faker->phoneNumber . "<br />";
-        echo $faker->text . "<br />";
-    }
-}
-?>    
+        <!-- Display the list of users: -->
+        @for ($i=0; $i<$num_users; $i++)
+            <section>
+            {{ "<br />" . $faker->name, "<br />" }}
+            {{ $faker->dateTimeThisCentury->format('Y-m-d'), "<br />" }}
+            {{ $faker->email, "<br />" }}
+            {{ $faker->address . "<br />" }}
+            {{ $faker->phoneNumber . "<br />" }}
+            {{ $faker->text . "<br />" }}
+            </section>
+        @endfor
+    @endif
+@endif
+
+<!--end of 'content' section-->
 @stop
