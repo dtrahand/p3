@@ -11,7 +11,7 @@
 <p>Type in the number of "Lorem Ipsum" paragraph(s) to generate:</p>
 
     {{ Form::open(array('url' => 'LoremIpsum')) }}
-    {{ Form::label('num_paragraph', 'Number of paragraph(s) (maximum 100) ', array('id'=>'num_paragraphs')) }}
+    {{ Form::label('num_paragraphText', 'Number of paragraph(s) (maximum 100)') }}
     {{ Form::text('num_paragraphs') }}
     {{ Form::submit('Generate!') }} 
     {{ Form::close() }}
