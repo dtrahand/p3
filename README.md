@@ -7,7 +7,7 @@
 see [Project 3 live URL](http://p3.delphinetrahand.me/)
 
 ## Demo information: 
-    Jing screencast demo link.
+    Jing screencast demo link: http://screencast.com/t/TiyCvNEsK9R
     
 ----
 ## Any details the instructor or TA needs to know:
