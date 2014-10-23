@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-	<h1>DWA-15 P3</h1>
-Welcome to Dynamic Web Applications - Project 3
-You can choose through the above links to either generate "Lorem Ipsum" text or a list of fake users.
+	<h1>Developer's Best Friend</h1>
+Welcome to Dynamic Web Applications - Project 3<br />
+Click on the above links to either generate "Lorem Ipsum" text or a list of fake users.
 @stop

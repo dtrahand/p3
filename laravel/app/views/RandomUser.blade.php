@@ -10,12 +10,12 @@ This Generator will create a list of fake users with:<br />
 name, date of birth, email, address, phone number and a description.<br />
 <br />Choose the number of users you wish to create:<br />
     {{ Form::open(array('url' => 'RandomUser')) }}
-    {{ Form::label('num_usersText', 'Number of users (max 100) ') }}
-    {{ Form::text('num_users') }}
+    {{ Form::label('num_users', 'Number of users (max 100) ') }}
+    {{ Form::text('num_users', '', array('id'=>'num_users')) }}
+
     {{ Form::submit('Generate!') }} 
     {{ Form::close() }}
 <hr>
-
 <!-- If the number of users is set: -->
 @if (isset($num_users))
     {{ $outputsentence }}
